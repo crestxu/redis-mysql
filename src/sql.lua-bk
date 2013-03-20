@@ -1,0 +1,6 @@
+
+local db, err = mysql.connect('tc-veyron-rd01.tc:8879', 'root', '')
+redis.log(redis.LOG_NOTICE,err);
+db:select_db('test');
+db:set_charset('utf-8')
+local rs = db:query("INSERT INTO `table` VALUES (6,10000,'33333','ÃÏ π','hehe')")
